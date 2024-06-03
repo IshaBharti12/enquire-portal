@@ -32,7 +32,7 @@ const Home = () => {
                             <button className="btnn bg-orange-500 text-white py-2 px-4 rounded mt-4 w-full hover:bg-white hover:text-orange-500 transition">
                                 <a href="#">Login</a>
                             </button>
-                            </div>
+                            </div> 
                             <p className="link text-center mt-4 text-lg"> 
                                 Don't have an account<br />
                                 <a href="#" className="text-orange-500">Sign up </a>here

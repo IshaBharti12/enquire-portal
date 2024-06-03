@@ -8,7 +8,7 @@ const Header = () => {
             <h2 className='text-orange-500 text-[35px] font-serif px-2'><img src="/upflairs white logo.png" alt="" className='w-[40%] h-auto'/></h2>
             <nav className="flex flex-1 justify-center space-x-8 mr-[10%]">
                 <NavLink to='/' className="hover:text-gray-300">Home</NavLink>
-                <NavLink to='/dashboard' classNaaame="hover:text-gray-300">Dashboard</NavLink>
+                <NavLink to='/login' className="hover:text-gray-300">Loginpage</NavLink>
                 <NavLink to='/about' className="hover:text-gray-300">About</NavLink>
                 <NavLink to='/pages' className="hover:text-gray-300">Contact</NavLink>
                 <NavLink to='/contact' className="hover:text-gray-300">Query</NavLink>
