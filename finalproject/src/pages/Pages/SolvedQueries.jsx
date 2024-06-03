@@ -1,17 +1,16 @@
 import React from "react";
+import useSolvedQueries from "../../hooks/useSolvedQueries";
 
-const SolvedQueries  = () => {
-  const array = [
-    { Email: 1, Course: 'Mark', Contact: 'Otto', Query: '@mdo'},
-    { Email: 1, Course: 'Mark', Contact: 'Otto',  Query: '@mdo'},
-    { Email: 1, Course: 'Mark', Contact: 'Otto',  Query: '@mdo'},
-  ];
+const SolvedQueries = () => {
+  const { solvedQueries, isLoading } = useSolvedQueries();
+
+  if (isLoading) return null;
 
   return (
     <div className="p-6">
       <div className="bg-white shadow-md rounded-lg p-4">
         <h1 className="text-xl font-bold mb-4">SOLVED QUERIES</h1>
-        
+
         <table className="min-w-full bg-white">
           <thead>
             <tr>
@@ -19,23 +18,22 @@ const SolvedQueries  = () => {
               <th className="py-2 px-4 border-b">Course Name</th>
               <th className="py-2 px-4 border-b">Contact Number</th>
               <th className="py-2 px-4 border-b">Query</th>
-              
             </tr>
           </thead>
           <tbody>
-            {array.map((item, index) => (
+            {solvedQueries.map((item, index) => (
               <tr key={index} className="border-b">
-                <td className="py-2 px-4">{item.Email}</td>
-                <td className="py-2 px-4">{item.Course } </td>
-                <td className="py-2 px-4">{item.Contact}</td>
-                <td className="py-2 px-4">{item.Query}</td>
-                </tr>
+                <td className="py-2 px-4">{item.email}</td>
+                <td className="py-2 px-4">{item.course} </td>
+                <td className="py-2 px-4">{item.contact}</td>
+                <td className="py-2 px-4">{item.query}</td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
   );
-}
+};
 
 export default SolvedQueries;

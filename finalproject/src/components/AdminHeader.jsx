@@ -1,7 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { IoLogOutOutline } from "react-icons/io5";
+import useLogoutAdmin from "../hooks/useLogoutAdmin";
 
 const AdminHeader = () => {
+  const { logoutAdmin } = useLogoutAdmin();
+  function handleLogout() {
+    logoutAdmin();
+  }
+
   return (
     <header className="bg-gray-800 text-white  w-full top-0 left-0 flex items-center justify-between sticky z-50">
       <h2 className="text-orange-500 text-[35px] font-serif px-2">
@@ -17,6 +24,9 @@ const AdminHeader = () => {
         <NavLink to="/admin/solved" className="hover:text-gray-300">
           Solved
         </NavLink>
+        <button onClick={handleLogout}>
+          <IoLogOutOutline className="w-6 h-6" />
+        </button>
       </nav>
     </header>
   );
